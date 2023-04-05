@@ -1,0 +1,70 @@
+table {
+  text-align: center;
+  color: black;
+  border-collapse: collapse;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 80%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table button {
+
+  border-radius: 5px;
+  padding: 8px 20px;
+  background-color:  #DB2C33;
+  color: white;
+  border: none;
+  transition: transform 0.1s;
+}
+
+table button:hover{
+  transform: scale(1.2);
+}
+
+table th {
+  padding: 10px;
+  background-color: #C0CCDA;
+  font-size: large;
+  font-family: "Trebuchet MS", Serif;
+}
+
+table td {
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #EFF2F7;
+}
+
+tr:nth-child(odd) {
+  background-color: white;
+}
+
+tr{
+  opacity: 90%;
+}
+
+tbody tr:hover {
+  background-color: #F5d2d2;
+  color: black;
+}
+
+.error {
+  color: red;
+}
+
+h1 {
+  text-align: center;
+  font-size: 25px;
+  font-family: "Trebuchet MS", Serif;
+  color: antiquewhite;
+  border-left: transparent;
+  border-right: transparent;
+  border-top: transparent;
+  border-bottom-color: antiquewhite;
+  border-style: groove;
+  border-width: thick;
+}

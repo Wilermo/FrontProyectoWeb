@@ -1,0 +1,38 @@
+<h1>Horarios</h1>
+
+<!--a th:href="@{/bus/add}">Agregar</a-->
+
+<table class="horario-list">
+
+  <thead>
+  <tr>
+    <th>Placa Bus</th>
+    <th>Conductor</th>
+    <th>Dia</th>
+    <th>Hora inicio</th>
+    <th>Hora fin</th>
+    <th>Ver detalles horario</th>
+    <th>Editar horario</th>
+    <th>Eliminar horario</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr *ngFor="let horario of horarios" >
+    <td> {{horario.busHorario}}</td>
+    <td> {{horario.conductorHorario}}</td>
+    <td> {{horario.diasSemana}}</td>
+    <td> {{horario.horaInicioStr}}</td>
+    <td> {{horario.horaFinStr}}</td>
+    <td>
+      <button type="button" >Ver</button>
+    </td>
+    <td>
+      <button type="button">Editar</button>
+    </td>
+    <td>
+      <button type="button">Eliminar</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
