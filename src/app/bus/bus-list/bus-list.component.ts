@@ -26,4 +26,7 @@ export class BusListComponent implements OnInit{
   verBus(bus:Bus){
     this.router.navigate(['/bus/view', bus.id]);
   }
+  addBus(){
+    this.router.navigate(['/bus/add']);
+  }
 }

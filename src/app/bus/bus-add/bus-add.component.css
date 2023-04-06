@@ -1,0 +1,12 @@
+h1 {
+  text-align: center;
+  font-size: 25px;
+  font-family: "Trebuchet MS", Serif;
+  color: antiquewhite;
+  border-left: transparent;
+  border-right: transparent;
+  border-top: transparent;
+  border-bottom-color: antiquewhite;
+  border-style: groove;
+  border-width: thick;
+}
