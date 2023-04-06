@@ -18,4 +18,8 @@ export class HorarioListComponent implements OnInit{
   ngOnInit(): void {
     this.horarioService.findAll().subscribe(horarios => this.horarios = horarios);
   }
+
+  addHorario() {
+    this.router.navigate(['/horario/add']);
+  }
 }

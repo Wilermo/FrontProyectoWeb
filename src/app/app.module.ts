@@ -10,6 +10,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { BusViewComponent } from './bus/bus-view/bus-view.component';
 import { HorarioListComponent } from './horario/horario-list/horario-list.component';
 import { ConductorListComponent } from './conductor/conductor-list/conductor-list.component';
+import { HorarioAddComponent } from './horario/horario-add/horario-add.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { ConductorListComponent } from './conductor/conductor-list/conductor-lis
     BusViewComponent,
     HorarioListComponent,
     ConductorListComponent,
+    HorarioAddComponent,
 
   ],
   imports: [
