@@ -3,10 +3,12 @@ import {Bus} from "../../model/bus";
 import {BusService} from "../../shared/bus.service";
 import {ActivatedRoute, Router} from "@angular/router";
 
+
 @Component({
   selector: 'app-bus-list',
   templateUrl: './bus-list.component.html',
-  styleUrls: ['./bus-list.component.css']
+  styleUrls: ['./bus-list.component.css'],
+
 })
 export class BusListComponent implements OnInit{
 

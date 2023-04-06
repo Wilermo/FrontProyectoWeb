@@ -1,16 +1,21 @@
-<div class="Fondo">
+<div class="Fondo" [@routeAnimations]="getRouteAnimationData()">
+  <div class="Header">
+    <h1>Transmilleno</h1>
+    <h2>Sistema de gestión de buses</h2>
+  </div>
 
-  <h1>Transmilleno</h1>
-  <h2>Sistema de gestión de buses</h2>
-  <nav>
-    <ul>
+  <nav class="menuPrincipal">
 
-      <li routerLinkActive="menuSelected">
+    <a routerLinkActive="menuSelected" [routerLink]="['/bus/list']">Buses</a>
 
-        <a [routerLink]="['/bus/list']" >Bus list</a>
+    <a routerLinkActive="menuSelected" [routerLink]="['/conductor/list']">Conductores</a>
 
-      </li>
-    </ul>
+    <a routerLinkActive="menuSelected" [routerLink]="['/horario/list']">Horarios</a>
+
+    <a routerLinkActive="menuSelected" [routerLink]="['/bus/list']">Rutas</a>
+
+    <a routerLinkActive="menuSelected" [routerLink]="['/bus/list']">Estaciones</a>
+
   </nav>
 
   <router-outlet></router-outlet>

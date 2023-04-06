@@ -31,7 +31,9 @@ export class BusViewComponent implements OnInit {
   }
   volver():void{
     this.router.navigate(['/bus/list']);
+
   }
+
 
 
 }
