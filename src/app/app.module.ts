@@ -16,6 +16,7 @@ import { EstacionListComponent } from './componentesModel/estacion/estacion-list
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ModalConfirmacionComponent} from "./utils/modal-confirmacion/modal-confirmacion.component";
 import { MatDialogModule } from '@angular/material/dialog';
+import { ModalInformacionEliminadoComponent } from './utils/modal-informacion-eliminado/modal-informacion-eliminado.component';
 
 
 
@@ -31,7 +32,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     HorarioAddComponent,
     RutaListComponent,
     EstacionListComponent,
-    ModalConfirmacionComponent
+    ModalConfirmacionComponent,
+    ModalInformacionEliminadoComponent
 
 
   ],

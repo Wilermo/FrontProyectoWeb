@@ -20,4 +20,8 @@ export class EstacionService {
   findAll(): Observable<Estacion[]> {
     return this.http.get<Estacion[]>(`http://localhost:8080/estacion/list`);
   }
+
+  deleteById(id:number){
+    return this.http.get(`http://localhost:8080/estacion/delete/${id}`)
+  }
 }

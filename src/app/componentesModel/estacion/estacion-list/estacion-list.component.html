@@ -18,12 +18,12 @@
 
   <tr *ngFor="let estacion of estaciones" >
     <td> {{estacion.nombre}}</td>
-
+    <td> {{estacion.id}}</td>
     <td>
       <button type="button">Editar</button>
     </td>
     <td>
-      <button type="button" (click)="eliminarEstacion()">Eliminar</button>
+      <button type="button" (click)="eliminarEstacion(estacion)">Eliminar</button>
     </td>
   </tr>
   </tbody>

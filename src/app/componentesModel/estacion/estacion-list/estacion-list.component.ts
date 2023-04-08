@@ -5,6 +5,9 @@ import {EstacionService} from "../../../shared/estacion.service";
 import {Estacion} from "../../../model/estacion";
 import {MatDialog} from "@angular/material/dialog";
 import {ModalConfirmacionComponent} from "../../../utils/modal-confirmacion/modal-confirmacion.component";
+import {
+  ModalInformacionEliminadoComponent
+} from "../../../utils/modal-informacion-eliminado/modal-informacion-eliminado.component";
 
 @Component({
   selector: 'app-estacion-list',
@@ -32,11 +35,15 @@ export class EstacionListComponent implements OnInit{
   }
 
 
-  eliminarEstacion() {
-    const dialogRef = this.dialog.open(ModalConfirmacionComponent);
+  eliminarEstacion(estacionSeleccionada:Estacion) {
+    let dialogRef = this.dialog.open(ModalConfirmacionComponent);
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.router.navigate(['/bus/list']);
+        if(this.estacionService.deleteById(estacionSeleccionada.id)){
+          let dialogRef =this.dialog.open(ModalInformacionEliminadoComponent);
+          dialogRef.afterClosed().subscribe(x => window.location.reload())
+        }
+
       } else {
         // El usuario canceló la acción
       }
