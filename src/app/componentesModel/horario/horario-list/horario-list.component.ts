@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Horario} from "../../model/horario";
+import {Horario} from "../../../model/horario";
 import {ActivatedRoute, Router} from "@angular/router";
-import {HorarioService} from "../../shared/horario.service";
+import {HorarioService} from "../../../shared/horario.service";
 
 @Component({
   selector: 'app-horario-list',

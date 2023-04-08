@@ -1,14 +1,14 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {BusListComponent} from "./bus/bus-list/bus-list.component";
-import {BusViewComponent} from "./bus/bus-view/bus-view.component";
-import {HorarioListComponent} from "./horario/horario-list/horario-list.component";
-import {HorarioAddComponent} from "./horario/horario-add/horario-add.component";
-import {BusAddComponent} from "./bus/bus-add/bus-add.component";
+import {BusListComponent} from "./componentesModel/bus/bus-list/bus-list.component";
+import {BusViewComponent} from "./componentesModel/bus/bus-view/bus-view.component";
+import {HorarioListComponent} from "./componentesModel/horario/horario-list/horario-list.component";
+import {HorarioAddComponent} from "./componentesModel/horario/horario-add/horario-add.component";
+import {BusAddComponent} from "./componentesModel/bus/bus-add/bus-add.component";
 import {Estacion} from "./model/estacion";
-import {EstacionListComponent} from "./estacion/estacion-list/estacion-list.component";
-import {RutaListComponent} from "./ruta/ruta-list/ruta-list.component";
-import {ConductorListComponent} from "./conductor/conductor-list/conductor-list.component";
+import {EstacionListComponent} from "./componentesModel/estacion/estacion-list/estacion-list.component";
+import {RutaListComponent} from "./componentesModel/ruta/ruta-list/ruta-list.component";
+import {ConductorListComponent} from "./componentesModel/conductor/conductor-list/conductor-list.component";
 
 const routes: Routes = [
   {path: 'bus/list', component: BusListComponent},

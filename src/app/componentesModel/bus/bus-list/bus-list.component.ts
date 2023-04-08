@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Bus} from "../../model/bus";
-import {BusService} from "../../shared/bus.service";
+import {Bus} from "../../../model/bus";
+import {BusService} from "../../../shared/bus.service";
 import {ActivatedRoute, Router} from "@angular/router";
 
 

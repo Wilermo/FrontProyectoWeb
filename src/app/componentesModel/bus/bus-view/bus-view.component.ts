@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Bus} from "../../model/bus";
-import {BusService} from "../../shared/bus.service";
+import {Bus} from "../../../model/bus";
+import {BusService} from "../../../shared/bus.service";
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { Observable } from 'rxjs';

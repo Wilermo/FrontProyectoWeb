@@ -119,3 +119,9 @@ nav a:focus::after {
   transform: translateX(0px);
 }
 
+
+
+.mat-dialog-container{
+  background-color: red;
+  border: 2px solid black;
+}
