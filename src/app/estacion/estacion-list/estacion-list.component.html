@@ -1,0 +1,31 @@
+<h1>Estaciones</h1>
+
+<div class="container">
+  <button type="button" (click)="addEstacion()" >+ Añadir estacion</button>
+</div>
+
+<table class="bus-list">
+
+
+  <thead>
+  <tr>
+    <th>Nombre</th>
+    <th>Editar estación</th>
+    <th>Eliminar estación</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr *ngFor="let estacion of estaciones" >
+    <td> {{estacion.nombre}}</td>
+
+    <td>
+      <button type="button">Editar</button>
+    </td>
+    <td>
+      <button type="button">Eliminar</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+

@@ -11,6 +11,9 @@ import { BusViewComponent } from './bus/bus-view/bus-view.component';
 import { HorarioListComponent } from './horario/horario-list/horario-list.component';
 import { ConductorListComponent } from './conductor/conductor-list/conductor-list.component';
 import { HorarioAddComponent } from './horario/horario-add/horario-add.component';
+import { RutaListComponent } from './ruta/ruta-list/ruta-list.component';
+import { EstacionListComponent } from './estacion/estacion-list/estacion-list.component';
+
 
 
 @NgModule({
@@ -23,6 +26,9 @@ import { HorarioAddComponent } from './horario/horario-add/horario-add.component
     HorarioListComponent,
     ConductorListComponent,
     HorarioAddComponent,
+    RutaListComponent,
+    EstacionListComponent,
+
 
   ],
   imports: [

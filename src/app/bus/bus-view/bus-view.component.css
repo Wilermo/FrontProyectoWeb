@@ -1,20 +1,21 @@
 .container{
   border-radius: 25px;
-  opacity: 90%;
+
   padding: 20px;
   width: auto;
   height: auto;
-  background-color: #EFF2F7;
+  background-color: rgba(239, 242, 247, 0.9);
   margin-left: auto;
   margin-right: auto;
 }
+
 
 .subtitulo{
   font-size: large;
 }
 
 button {
-
+  opacity:1;
   border-radius: 5px;
   padding: 8px 20px;
   background-color:  #DB2C33;
