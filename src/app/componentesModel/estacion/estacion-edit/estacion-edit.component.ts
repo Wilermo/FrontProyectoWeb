@@ -20,8 +20,6 @@ export class EstacionEditComponent implements OnInit {
 
   }
   estacion : Estacion | undefined;
-  entryText = document.getElementById("entradaTexto") as HTMLInputElement | undefined;
-
 
   ngOnInit() {
     this.route.paramMap.pipe(switchMap(params =>
