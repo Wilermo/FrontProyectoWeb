@@ -7,7 +7,7 @@ export class Ruta {
     public id: number,
     public nombreRuta: string,
     public estaciones: Estacion[],
-    public horarioRuta: Horario[],
+
   ) {
   }
 }

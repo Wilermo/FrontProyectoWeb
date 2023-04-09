@@ -38,6 +38,7 @@ export class EstacionService {
 
   //TODO Revisar envio solicitud
   guardarEstacion(estacionNueva: Estacion) :Observable<Estacion>{
+    console.log(estacionNueva);
     return this.http.post<Estacion>(`http://localhost:8080/estacion/add`,estacionNueva,this.httpOptions)
   }
 }

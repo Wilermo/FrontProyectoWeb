@@ -1,0 +1,46 @@
+.container{
+  border-radius: 25px;
+
+  padding: 20px;
+  width: auto;
+  height: auto;
+  background-color: rgba(239, 242, 247, 0.9);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.subtitulo{
+  font-size: large;
+}
+
+button {
+  opacity:1;
+  border-radius: 5px;
+  padding: 8px 20px;
+  background-color:  #DB2C33;
+  color: white;
+  border: none;
+  transition: transform 0.1s;
+}
+
+button:hover{
+  transform: scale(1.2);
+}
+
+h1 {
+  text-align: center;
+  font-size: 25px;
+  font-family: "Trebuchet MS", Serif;
+  color: antiquewhite;
+  border-left: transparent;
+  border-right: transparent;
+  border-top: transparent;
+  border-bottom-color: antiquewhite;
+  border-style: groove;
+  border-width: thick;
+}
+
+li {
+  list-style: "🚏 ";
+}
