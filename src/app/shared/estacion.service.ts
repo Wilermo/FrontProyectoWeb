@@ -22,6 +22,6 @@ export class EstacionService {
   }
 
   deleteById(id:number){
-    return this.http.get(`http://localhost:8080/estacion/delete/${id}`)
+    return this.http.delete (`http://localhost:8080/estacion/delete/${id}`)
   }
 }

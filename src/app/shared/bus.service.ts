@@ -24,4 +24,9 @@ export class BusService {
   findById(id: number) {
     return this.http.get<Bus>(`http://localhost:8080/bus/view/${id}`);
   }
+
+  deleteById(id: number) {
+    return this.http.get<Bus>(`http://localhost:8080/bus/delete/${id}`);
+    return false;
+  }
 }
