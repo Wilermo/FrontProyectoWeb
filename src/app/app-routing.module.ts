@@ -9,6 +9,7 @@ import {Estacion} from "./model/estacion";
 import {EstacionListComponent} from "./componentesModel/estacion/estacion-list/estacion-list.component";
 import {RutaListComponent} from "./componentesModel/ruta/ruta-list/ruta-list.component";
 import {ConductorListComponent} from "./componentesModel/conductor/conductor-list/conductor-list.component";
+import {EstacionEditComponent} from "./componentesModel/estacion/estacion-edit/estacion-edit.component";
 
 const routes: Routes = [
   {path: 'bus/list', component: BusListComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'horario/list', component: HorarioListComponent},
   {path: 'horario/add', component: HorarioAddComponent},
   {path: 'estacion/list', component: EstacionListComponent},
+  {path: 'estacion/edit/:id', component: EstacionEditComponent},
   {path: 'ruta/list', component: RutaListComponent},
   {path: 'conductor/list', component: ConductorListComponent},
   {path: '', pathMatch: 'full', redirectTo: '/horario/list'}

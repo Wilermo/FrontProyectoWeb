@@ -17,6 +17,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ModalConfirmacionComponent} from "./utils/modal-confirmacion/modal-confirmacion.component";
 import { MatDialogModule } from '@angular/material/dialog';
 import { ModalInformacionEliminadoComponent } from './utils/modal-informacion-eliminado/modal-informacion-eliminado.component';
+import { EstacionEditComponent } from './componentesModel/estacion/estacion-edit/estacion-edit.component';
+import { EstacionAddComponent } from './componentesModel/estacion/estacion-add/estacion-add.component';
+import { ModalInformacionErrorComponent } from './utils/modal-informacion-error/modal-informacion-error.component';
 
 
 
@@ -33,7 +36,10 @@ import { ModalInformacionEliminadoComponent } from './utils/modal-informacion-el
     RutaListComponent,
     EstacionListComponent,
     ModalConfirmacionComponent,
-    ModalInformacionEliminadoComponent
+    ModalInformacionEliminadoComponent,
+    EstacionEditComponent,
+    EstacionAddComponent,
+    ModalInformacionErrorComponent
 
 
   ],

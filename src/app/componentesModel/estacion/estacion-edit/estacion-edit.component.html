@@ -1,0 +1,13 @@
+<div>
+  <h1>Editar estación</h1>
+  <div class="container">
+    <p><b class="subtitulo">Nombre actual: </b> {{estacion?.nombre}}</p>
+    <p><b class="subtitulo">Nuevo nombre: </b> <input type="text" required="true" id="entradaTexto"></p>
+    <div class="buttonContainer">
+      <button type="button" (click)="volver()">Volver</button>
+      <button type="button" (click)="editar()">Confirmar edición</button>
+    </div>
+  </div>
+
+</div>
+

@@ -8,6 +8,7 @@ import {ModalConfirmacionComponent} from "../../../utils/modal-confirmacion/moda
 import {
   ModalInformacionEliminadoComponent
 } from "../../../utils/modal-informacion-eliminado/modal-informacion-eliminado.component";
+import {Bus} from "../../../model/bus";
 
 @Component({
   selector: 'app-estacion-list',
@@ -32,6 +33,10 @@ export class EstacionListComponent implements OnInit{
 
   addEstacion() {
     this.router.navigate(['/estacion/add']);
+  }
+
+  editEstacion(estacion:Estacion){
+    this.router.navigate(['/estacion/edit', estacion.id]);
   }
 
 

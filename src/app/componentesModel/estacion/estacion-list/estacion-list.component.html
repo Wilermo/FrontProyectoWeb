@@ -20,7 +20,7 @@
     <td> {{estacion.nombre}}</td>
     <td> {{estacion.id}}</td>
     <td>
-      <button type="button">Editar</button>
+      <button type="button" (click)="editEstacion(estacion)">Editar</button>
     </td>
     <td>
       <button type="button" (click)="eliminarEstacion(estacion)">Eliminar</button>
