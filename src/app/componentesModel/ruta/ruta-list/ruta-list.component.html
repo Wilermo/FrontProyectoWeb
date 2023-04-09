@@ -1,1 +1,34 @@
-<p>ruta-list works!</p>
+<h1>Rutas</h1>
+
+<div class="container">
+  <button type="button" (click)="addRuta()" >+ Añadir ruta</button>
+</div>
+
+<table class="bus-list">
+
+
+  <thead>
+  <tr>
+    <th>Nombre Ruta</th>
+    <th>Ver detalles ruta</th>
+    <th>Editar ruta</th>
+    <th>Eliminar ruta</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr *ngFor="let ruta of rutas" >
+    <td> {{ruta.nombreRuta}}</td>
+
+    <td>
+      <button type="button" (click)="verEstaciones(ruta)">Ver Estaciones</button>
+    </td>
+    <td>
+      <button type="button" (click)="editRuta(ruta)">Editar</button>
+    </td>
+    <td>
+      <button type="button" (click)="deleteRuta(ruta)">Eliminar</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

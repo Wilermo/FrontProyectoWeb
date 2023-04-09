@@ -20,6 +20,14 @@ import { ModalInformacionEliminadoComponent } from './utils/modal-informacion-el
 import { EstacionEditComponent } from './componentesModel/estacion/estacion-edit/estacion-edit.component';
 import { EstacionAddComponent } from './componentesModel/estacion/estacion-add/estacion-add.component';
 import { ModalInformacionErrorComponent } from './utils/modal-informacion-error/modal-informacion-error.component';
+import { RutaAddComponent } from './componentesModel/ruta/ruta-add/ruta-add.component';
+import { RutaViewComponent } from './componentesModel/ruta/ruta-view/ruta-view.component';
+import { RutaEditComponent } from './componentesModel/ruta/ruta-edit/ruta-edit.component';
+import { ConductorEditComponent } from './componentesModel/conductor/conductor-edit/conductor-edit.component';
+import { ConductorAddComponent } from './componentesModel/conductor/conductor-add/conductor-add.component';
+import { ConductorViewComponent } from './componentesModel/conductor/conductor-view/conductor-view.component';
+import { HorarioViewComponent } from './componentesModel/horario/horario-view/horario-view.component';
+import { HorarioEditComponent } from './componentesModel/horario/horario-edit/horario-edit.component';
 
 
 
@@ -39,7 +47,15 @@ import { ModalInformacionErrorComponent } from './utils/modal-informacion-error/
     ModalInformacionEliminadoComponent,
     EstacionEditComponent,
     EstacionAddComponent,
-    ModalInformacionErrorComponent
+    ModalInformacionErrorComponent,
+    RutaAddComponent,
+    RutaViewComponent,
+    RutaEditComponent,
+    ConductorEditComponent,
+    ConductorAddComponent,
+    ConductorViewComponent,
+    HorarioViewComponent,
+    HorarioEditComponent
 
 
   ],
