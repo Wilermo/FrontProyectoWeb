@@ -28,6 +28,7 @@ import { ConductorAddComponent } from './componentesModel/conductor/conductor-ad
 import { ConductorViewComponent } from './componentesModel/conductor/conductor-view/conductor-view.component';
 import { HorarioViewComponent } from './componentesModel/horario/horario-view/horario-view.component';
 import { HorarioEditComponent } from './componentesModel/horario/horario-edit/horario-edit.component';
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -59,13 +60,14 @@ import { HorarioEditComponent } from './componentesModel/horario/horario-edit/ho
 
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatDialogModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatDialogModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -9,21 +9,23 @@ import {
   ModalInformacionEliminadoComponent
 } from "../../../utils/modal-informacion-eliminado/modal-informacion-eliminado.component";
 import {Bus} from "../../../model/bus";
+import {ModalInformacionErrorComponent} from "../../../utils/modal-informacion-error/modal-informacion-error.component";
 
 @Component({
   selector: 'app-estacion-list',
   templateUrl: './estacion-list.component.html',
   styleUrls: ['./estacion-list.component.css']
 })
-export class EstacionListComponent implements OnInit{
+export class EstacionListComponent implements OnInit {
 
   constructor(private estacionService: EstacionService,
               private route: ActivatedRoute,
               private router: Router,
               public dialog: MatDialog
-              ) { }
+  ) {
+  }
 
-  estaciones:  Estacion [] | undefined;
+  estaciones: Estacion [] | undefined;
 
 
   ngOnInit(): void {
@@ -35,19 +37,24 @@ export class EstacionListComponent implements OnInit{
     this.router.navigate(['/estacion/add']);
   }
 
-  editEstacion(estacion:Estacion){
+  editEstacion(estacion: Estacion) {
     this.router.navigate(['/estacion/edit', estacion.id]);
   }
 
 
-  eliminarEstacion(estacionSeleccionada:Estacion) {
+  eliminarEstacion(estacionSeleccionada: Estacion) {
     let dialogRef = this.dialog.open(ModalConfirmacionComponent);
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        if(this.estacionService.deleteById(estacionSeleccionada.id)){
-          let dialogRef =this.dialog.open(ModalInformacionEliminadoComponent);
-          dialogRef.afterClosed().subscribe(x => window.location.reload())
-        }
+        this.estacionService.deleteById(estacionSeleccionada.id).subscribe(result => {
+          if (result) {
+            let dialogRef = this.dialog.open(ModalInformacionEliminadoComponent);
+            dialogRef.afterClosed().subscribe(x => window.location.reload())
+          }else{
+            let dialogRef = this.dialog.open(ModalInformacionErrorComponent);
+            dialogRef.afterClosed().subscribe(x => window.location.reload())
+          }
+        })
 
       } else {
         // El usuario canceló la acción

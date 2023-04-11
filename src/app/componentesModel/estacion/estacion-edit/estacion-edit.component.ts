@@ -8,6 +8,7 @@ import {
   ModalInformacionEliminadoComponent
 } from "../../../utils/modal-informacion-eliminado/modal-informacion-eliminado.component";
 import {ModalInformacionErrorComponent} from "../../../utils/modal-informacion-error/modal-informacion-error.component";
+import {ModalConfirmacionComponent} from "../../../utils/modal-confirmacion/modal-confirmacion.component";
 
 @Component({
   selector: 'app-estacion-edit',
@@ -35,17 +36,20 @@ export class EstacionEditComponent implements OnInit {
     if(inputValue!= undefined&& inputValue!=""){
       if(this.estacion!= undefined){
         this.estacion.nombre=inputValue;
-        if(this.estacionService.modificarEstacion(this.estacion)){
-          this.router.navigate(['/estacion/list']);
-        }
-      }else{
-        let dialogRef =this.dialog.open(ModalInformacionErrorComponent);
-        console.log("ESTACION")
+        this.estacionService.modificarEstacion(this.estacion).subscribe(result=>{
+          if(result){
+            let dialogRef = this.dialog.open(ModalConfirmacionComponent);
+            dialogRef.afterClosed().subscribe(x => this.router.navigate(['/estacion/list']))
+          }else{
+            let dialogRef =this.dialog.open(ModalInformacionErrorComponent);
+            dialogRef.afterClosed().subscribe(x => this.router.navigate(['/estacion/list']))
+          }
+        })
 
-      }
+        }
     }else{
       let dialogRef =this.dialog.open(ModalInformacionErrorComponent);
-      console.log("ENTRADA")
+      dialogRef.afterClosed().subscribe(x => this.router.navigate(['/estacion/list']))
 
     }
   }

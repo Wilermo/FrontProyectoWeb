@@ -4,11 +4,13 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
 import {Estacion} from "../../../model/estacion";
 import {ModalInformacionErrorComponent} from "../../../utils/modal-informacion-error/modal-informacion-error.component";
+import {ModalConfirmacionComponent} from "../../../utils/modal-confirmacion/modal-confirmacion.component";
 
 @Component({
   selector: 'app-estacion-add',
   templateUrl: './estacion-add.component.html',
-  styleUrls: ['./estacion-add.component.css']
+  styleUrls: ['./estacion-add.component.css'],
+
 })
 export class EstacionAddComponent {
 
@@ -20,6 +22,7 @@ export class EstacionAddComponent {
   }
 
   estacionNueva: Estacion | undefined;
+  entradaTexto: string | undefined;
 
 
   volver() {
@@ -27,15 +30,19 @@ export class EstacionAddComponent {
   }
 
   guardar() {
-    let inputValue = (<HTMLInputElement>document.getElementById("entradaTexto")).value;
+    let inputValue = this.entradaTexto;
     if (inputValue != undefined && inputValue != "") {
       this.estacionNueva = new Estacion(-1, inputValue)
-      if (this.estacionService.guardarEstacion(this.estacionNueva)) {
-        this.router.navigate(['/estacion/list']);
-      }
+      this.estacionService.guardarEstacion(this.estacionNueva).subscribe(result=>{
+        if(result.nombre == inputValue){
+          let dialogRef = this.dialog.open(ModalConfirmacionComponent);
+          dialogRef.afterClosed().subscribe(x => this.router.navigate(['/estacion/list']))
+        }
+      })
     } else {
       let dialogRef = this.dialog.open(ModalInformacionErrorComponent);
-      console.log("ESTACION")
+      dialogRef.afterClosed().subscribe(x => this.router.navigate(['/estacion/list']))
+
     }
   }
 
