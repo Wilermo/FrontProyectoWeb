@@ -1,10 +1,12 @@
+
+
 export class Conductor {
 
   constructor(
     public id: number,
     public nombre: string,
-    public cedula: number,
-    public telefono: number,
+    public cedula: string,
+    public telefono: string,
     public direccion: string
   ) {
   }

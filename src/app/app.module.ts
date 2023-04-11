@@ -31,6 +31,7 @@ import { HorarioEditComponent } from './componentesModel/horario/horario-edit/ho
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +56,8 @@ import { HorarioEditComponent } from './componentesModel/horario/horario-edit/ho
     ConductorAddComponent,
     ConductorViewComponent,
     HorarioViewComponent,
-    HorarioEditComponent
+    HorarioEditComponent,
+
 
 
   ],
