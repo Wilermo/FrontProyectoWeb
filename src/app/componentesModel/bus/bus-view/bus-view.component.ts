@@ -18,10 +18,6 @@ export class BusViewComponent implements OnInit {
   constructor(private busService: BusService,private route: ActivatedRoute,private router: Router) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      console.log(params);
-      console.log(params.get("id"));
-    });
 
     this.route.paramMap.pipe(switchMap(params =>
         this.busService.findById(+params.get('id')!)
