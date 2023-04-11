@@ -13,6 +13,7 @@ import {EstacionEditComponent} from "./componentesModel/estacion/estacion-edit/e
 import {EstacionAddComponent} from "./componentesModel/estacion/estacion-add/estacion-add.component";
 import {RutaAddComponent} from "./componentesModel/ruta/ruta-add/ruta-add.component";
 import {RutaViewComponent} from "./componentesModel/ruta/ruta-view/ruta-view.component";
+import {ConductorViewComponent} from "./componentesModel/conductor/conductor-view/conductor-view.component";
 
 const routes: Routes = [
   {path: 'bus/list', component: BusListComponent},
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path: 'ruta/add', component: RutaAddComponent},
   {path: 'ruta/view/:id', component: RutaViewComponent},
   {path: 'conductor/list', component: ConductorListComponent},
+  {path: 'conductor/view', component: ConductorViewComponent},
   {path: '', pathMatch: 'full', redirectTo: '/horario/list'}
 ];
 
