@@ -22,7 +22,7 @@ export class ConductorListComponent implements OnInit{
     this.conductorService.findAll().subscribe(conductores => this.conductores = conductores);
   }
   addConductor() {
-
+    this.router.navigate(['/conductor/add']);
   }
 
   verConductor(conductor: Conductor) {
