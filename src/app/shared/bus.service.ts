@@ -27,6 +27,10 @@ export class BusService {
 
   deleteById(id: number) {
     return this.http.get<Bus>(`http://localhost:8080/bus/delete/${id}`);
-    return false;
+  }
+
+  guardarBus(nuevoBus : Bus) : Observable<Bus>{
+    console.log(nuevoBus);
+    return this.http.post<Bus>('http://localhost:8080/bus/add',nuevoBus,this.httpOptions) 
   }
 }

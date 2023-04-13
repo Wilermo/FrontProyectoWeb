@@ -29,8 +29,6 @@ import { ConductorViewComponent } from './componentesModel/conductor/conductor-v
 import { HorarioViewComponent } from './componentesModel/horario/horario-view/horario-view.component';
 import { HorarioEditComponent } from './componentesModel/horario/horario-edit/horario-edit.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
