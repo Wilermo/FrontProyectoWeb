@@ -1,7 +1,7 @@
 <div>
   <h1>Crear estación</h1>
   <div class="container">
-    <p><b class="subtitulo">Nombre nueva estación: </b> <input type="text" required="true" id="entradaTexto"></p>
+    <p><b class="subtitulo">Nombre nueva estación: </b> <input type="text" [(ngModel)]="entradaTexto"></p>
     <div class="buttonContainer">
       <button type="button" (click)="volver()">Volver</button>
       <button type="button" (click)="guardar()">Confirmar creación</button>
