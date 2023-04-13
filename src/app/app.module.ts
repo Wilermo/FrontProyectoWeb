@@ -31,8 +31,6 @@ import { HorarioEditComponent } from './componentesModel/horario/horario-edit/ho
 import {FormsModule} from "@angular/forms";
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
