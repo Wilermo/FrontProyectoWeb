@@ -24,4 +24,12 @@ export class RutaService {
   findById(id: number) : Observable<Ruta>{
     return this.http.get<Ruta>(`http://localhost:8080/ruta/view/${id}`);
   }
+
+  delete(id: number | undefined): Observable<boolean> {
+    return this.http.delete<boolean>(`http://localhost:8080/ruta/delete/${id}`);
+  }
+
+  guardarRuta(ruta: Ruta) : Observable<Ruta>{
+    return this.http.post<Ruta>(`http://localhost:8080/ruta/add`,ruta,this.httpOptions);
+  }
 }

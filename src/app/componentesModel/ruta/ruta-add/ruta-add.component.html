@@ -1,7 +1,14 @@
 <div>
-  <h1>Crear estación</h1>
+  <h1>Crear ruta</h1>
   <div class="container">
-    <p><label class="subtitulo">Nombre nueva estación: </label> <input type="text" [(ngModel)]="entradaTexto"></p>
+    <p><label class="subtitulo">Nombre nueva ruta: </label> <input type="text" [(ngModel)]="entradaTexto"></p>
+    <label>Estaciones para la ruta:</label><br><br>
+    <form [(ngModel)]="form">
+      <div *ngFor="let estacion of estaciones" [attr.id]="estacion?.nombre" [attr.name]="estacion?.nombre">
+        <input type="checkbox" (change)="onCheckboxChange(estacion.nombre, $event)"><label>{{estacion?.nombre}}</label>
+      </div>
+    </form>
+    <br><br>
     <div class="buttonContainer">
       <button type="button" (click)="volver()">Volver</button>
       <button type="button" (click)="guardar()">Confirmar creación</button>

@@ -5,6 +5,9 @@ import {MatDialog} from "@angular/material/dialog";
 import {Estacion} from "../../../model/estacion";
 import {ModalInformacionErrorComponent} from "../../../utils/modal-informacion-error/modal-informacion-error.component";
 import {ModalConfirmacionComponent} from "../../../utils/modal-confirmacion/modal-confirmacion.component";
+import {
+  ModalConfirmacionCreacionComponent
+} from "../../../utils/modal-confirmacion-creacion/modal-confirmacion-creacion.component";
 
 @Component({
   selector: 'app-estacion-add',
@@ -35,7 +38,7 @@ export class EstacionAddComponent {
       this.estacionNueva = new Estacion(-1, inputValue)
       this.estacionService.guardarEstacion(this.estacionNueva).subscribe(result=>{
         if(result.nombre == inputValue){
-          let dialogRef = this.dialog.open(ModalConfirmacionComponent);
+          let dialogRef = this.dialog.open(ModalConfirmacionCreacionComponent);
           dialogRef.afterClosed().subscribe(x => this.router.navigate(['/estacion/list']))
         }
       })

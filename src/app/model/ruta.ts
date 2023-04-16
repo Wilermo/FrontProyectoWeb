@@ -6,7 +6,7 @@ export class Ruta {
   constructor(
     public id: number,
     public nombreRuta: string,
-    public estaciones: Estacion[],
+    public estaciones: string[]|undefined,
 
   ) {
   }

@@ -26,6 +26,7 @@ export class RutaViewComponent implements OnInit{
         this.rutaService.findById(+params.get('id')!)
 
     )).subscribe(ruta=> this.ruta = ruta);
+
   }
   volver():void{
     this.router.navigate(['/ruta/list']);
