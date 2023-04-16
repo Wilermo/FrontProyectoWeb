@@ -4,6 +4,11 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
 import {RutaService} from "../../../shared/ruta.service";
 import {Ruta} from "../../../model/ruta";
+import {ModalConfirmacionComponent} from "../../../utils/modal-confirmacion/modal-confirmacion.component";
+import {
+  ModalInformacionEliminadoComponent
+} from "../../../utils/modal-informacion-eliminado/modal-informacion-eliminado.component";
+import {ModalInformacionErrorComponent} from "../../../utils/modal-informacion-error/modal-informacion-error.component";
 
 @Component({
   selector: 'app-ruta-list',
@@ -23,7 +28,7 @@ export class RutaListComponent implements  OnInit{
   }
 
   addRuta() {
-
+    this.router.navigate(["/ruta/add"])
   }
 
   verEstaciones(ruta: Ruta) {
@@ -35,6 +40,23 @@ export class RutaListComponent implements  OnInit{
   }
 
   deleteRuta(ruta: Ruta) {
+    let dialogRef = this.dialog.open(ModalConfirmacionComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.rutaService.delete(ruta?.id).subscribe(result => {
+          if (result) {
+            let dialogRef = this.dialog.open(ModalInformacionEliminadoComponent);
+            dialogRef.afterClosed().subscribe(x => window.location.reload())
+          }else{
+            let dialogRef = this.dialog.open(ModalInformacionErrorComponent);
+            dialogRef.afterClosed().subscribe(x => window.location.reload())
+          }
+        })
 
+      } else {
+        // El usuario canceló la acción
+      }
+    })
   }
+
 }

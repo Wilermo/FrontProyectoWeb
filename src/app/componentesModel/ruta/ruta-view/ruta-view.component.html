@@ -6,7 +6,7 @@
     <p><b class="subtitulo">Estaciones:</b></p>
     <ul *ngFor="let estacion of ruta?.estaciones">
       <li>
-        {{estacion?.nombre}}
+        {{estacion}}
       </li>
     </ul>
     <button type="button" (click)="volver()">Volver</button>

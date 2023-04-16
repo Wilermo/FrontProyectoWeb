@@ -21,6 +21,7 @@ export class EstacionEditComponent implements OnInit {
 
   }
   estacion : Estacion | undefined;
+  entradaTexto : string | undefined;
 
   ngOnInit() {
     this.route.paramMap.pipe(switchMap(params =>
@@ -32,7 +33,7 @@ export class EstacionEditComponent implements OnInit {
   }
 
   editar() {
-    let inputValue = (<HTMLInputElement>document.getElementById("entradaTexto")).value;
+    let inputValue = this.entradaTexto;
     if(inputValue!= undefined&& inputValue!=""){
       if(this.estacion!= undefined){
         this.estacion.nombre=inputValue;

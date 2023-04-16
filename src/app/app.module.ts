@@ -29,6 +29,7 @@ import { ConductorViewComponent } from './componentesModel/conductor/conductor-v
 import { HorarioViewComponent } from './componentesModel/horario/horario-view/horario-view.component';
 import { HorarioEditComponent } from './componentesModel/horario/horario-edit/horario-edit.component';
 import {FormsModule} from "@angular/forms";
+import { ModalConfirmacionCreacionComponent } from './utils/modal-confirmacion-creacion/modal-confirmacion-creacion.component';
 
 
 @NgModule({
@@ -56,6 +57,7 @@ import {FormsModule} from "@angular/forms";
     ConductorViewComponent,
     HorarioViewComponent,
     HorarioEditComponent,
+    ModalConfirmacionCreacionComponent,
 
 
 
