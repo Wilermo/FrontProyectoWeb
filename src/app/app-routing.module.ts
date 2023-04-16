@@ -14,11 +14,13 @@ import {EstacionAddComponent} from "./componentesModel/estacion/estacion-add/est
 import {RutaAddComponent} from "./componentesModel/ruta/ruta-add/ruta-add.component";
 import {RutaViewComponent} from "./componentesModel/ruta/ruta-view/ruta-view.component";
 import {ConductorViewComponent} from "./componentesModel/conductor/conductor-view/conductor-view.component";
+import {BusEditComponent} from "./componentesModel/bus/bus-edit/bus-edit.component";
 
 const routes: Routes = [
   {path: 'bus/list', component: BusListComponent},
   {path: 'bus/add', component: BusAddComponent},
   {path: 'bus/view/:id', component: BusViewComponent},
+  {path: 'bus/edit/:id', component: BusEditComponent},
   {path: 'horario/list', component: HorarioListComponent},
   {path: 'horario/add', component: HorarioAddComponent},
   {path: 'estacion/list', component: EstacionListComponent},

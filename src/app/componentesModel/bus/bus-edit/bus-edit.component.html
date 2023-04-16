@@ -1,1 +1,16 @@
-<p>bus-edit works!</p>
+<div>
+  <h1>Editar bus</h1>
+  <div class="container">
+    <p><b class="subtitulo">Placa actual: </b> {{bus?.placa}}</p>
+    <p><b class="subtitulo">Nueva placa: </b> <input type="text"   [(ngModel)]="entradaPlaca"></p>
+
+    <p><b class="subtitulo">Modelo actual: </b> {{bus?.modelo}}</p>
+    <p><b class="subtitulo">Nuevo modelo: </b> <input type="text"   [(ngModel)]="entradaModelo"></p>
+
+    <div class="buttonContainer">
+      <button type="button" (click)="volver()">Volver</button>
+      <button type="button" (click)="editar()">Confirmar edición</button>
+    </div>
+  </div>
+
+</div>
