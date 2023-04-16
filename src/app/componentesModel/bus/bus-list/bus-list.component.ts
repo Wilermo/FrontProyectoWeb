@@ -7,6 +7,7 @@ import {ModalConfirmacionComponent} from "../../../utils/modal-confirmacion/moda
 import {
   ModalInformacionEliminadoComponent
 } from "../../../utils/modal-informacion-eliminado/modal-informacion-eliminado.component";
+import {ModalInformacionErrorComponent} from "../../../utils/modal-informacion-error/modal-informacion-error.component";
 
 
 @Component({
@@ -17,7 +18,7 @@ import {
 })
 export class BusListComponent implements OnInit{
 
-  buses : Bus[] | undefined
+  buses : Bus[] | undefined;
 
   constructor(private busService: BusService,
               private route: ActivatedRoute,
@@ -35,15 +36,24 @@ export class BusListComponent implements OnInit{
   addBus(){
     this.router.navigate(['/bus/add']);
   }
+
+  editBus(bus: Bus) {
+    this.router.navigate(['/bus/edit',bus.id]);
+  }
+
   deleteBus(busSeleccionado : Bus){
     let dialogRef = this.dialog.open(ModalConfirmacionComponent);
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        if(this.busService.deleteById(busSeleccionado.id)){
-          let dialogRef =this.dialog.open(ModalInformacionEliminadoComponent);
-          dialogRef.afterClosed().subscribe(x => window.location.reload())
-        }
-
+        this.busService.deleteById(busSeleccionado.id).subscribe(result => {
+          if(result){
+            let dialogRef = this.dialog.open(ModalInformacionEliminadoComponent);
+            dialogRef.afterClosed().subscribe(x => window.location.reload())
+          }else{
+            let dialogRef = this.dialog.open(ModalInformacionErrorComponent);
+            dialogRef.afterClosed().subscribe(x => window.location.reload())
+          }
+        })
       } else {
         // El usuario canceló la acción
       }
