@@ -1,1 +1,65 @@
-<p>horario-edit works!</p>
+<div>
+  <h1>Editar horario</h1>
+  <div class="container">
+    <div class="allSelectContainer">
+
+      <div class="selectContainer">
+        <p><b class="subtitulo">Conductor actual: </b> {{horario?.conductorHorario}}</p>
+        <label class="subtitulo"> Seleccione un conductor: </label>
+        <select [(ngModel)]="conductorSeleccionado">
+          <option *ngFor="let conductor of conductores" [value]="conductor.id">{{ conductor.nombre }}</option>
+        </select>
+      </div>
+
+      <div class="selectContainer">
+        <p><b class="subtitulo">Bus actual: </b> {{horario?.busHorario}}</p>
+        <label class="subtitulo"> Seleccione un bus: </label>
+        <select [(ngModel)]="busSeleccionado">
+          <option *ngFor="let bus of buses" [value]="bus.placa">{{ bus.placa }}</option>
+        </select>
+      </div>
+
+      <div class="selectContainer">
+        <p><b class="subtitulo">Día actual: </b> {{horario?.diasSemana}}</p>
+        <label class="subtitulo"> Seleccione un día: </label>
+        <select [(ngModel)]="diaSeleccionado">
+          <option *ngFor="let dia of dias" [value]="dia">{{ dia }}</option>
+        </select>
+      </div>
+
+      <div class="selectContainer">
+        <p><b class="subtitulo">Hora Inicio actual: </b> {{horario?.horaInicioStr}}</p>
+        <label class="subtitulo"> Seleccione una hora de inicio: </label>
+        <select [(ngModel)]="horaInicio">
+          <option *ngFor="let hora of horas" [value]="hora">{{ hora }}</option>
+        </select>
+      </div>
+      
+      <div class="selectContainer">
+        <p><b class="subtitulo">Hora final actual: </b> {{horario?.horaFinStr}}</p>
+        <label class="subtitulo"> Seleccione una hora de finalización: </label>
+        <select [(ngModel)]="horaFin">
+          <option *ngFor="let hora of horas" [value]="hora">{{ hora }}</option>
+        </select>
+      </div>
+
+      <div class="selectContainer">
+        <p><b class="subtitulo">Ruta actual: </b> {{horario?.rutaHorario}}</p>
+        <label class="subtitulo"> Seleccione una ruta: </label>
+        <select [(ngModel)]="rutaSeleccionada">
+          <option *ngFor="let ruta of rutas" [value]="ruta.id">{{ ruta.nombreRuta }}</option>
+        </select>
+      </div>
+    </div>
+
+
+
+    <br><br>
+    <div class="buttonContainer">
+      <button type="button" (click)="volver()">Volver</button>
+      <button type="button" (click)="guardar()">Confirmar creación</button>
+    </div>
+  </div>
+
+</div>
+
