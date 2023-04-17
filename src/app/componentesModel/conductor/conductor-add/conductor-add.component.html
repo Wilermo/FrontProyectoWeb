@@ -1,10 +1,10 @@
 <div>
   <h1>Crear conductor</h1>
   <div class="container">
-    <p><b class="subtitulo">Nombre conductor </b> <input type="text" required="true" id="nombreConductor"></p>
-    <p><b class="subtitulo">Cédula </b> <input type="text" required="true" id="cedulaConductor"></p>
-    <p><b class="subtitulo">Teléfono </b> <input type="text" required="true" id="telefonoConductor"></p>
-    <p><b class="subtitulo">Dirección</b> <input type="text" required="true" id="direccionConductor"></p>
+    <p><b class="subtitulo">Nombre conductor </b> <input type="text" [(ngModel)]="nombreConductor"></p>
+    <p><b class="subtitulo">Cédula </b> <input type="text" [(ngModel)]="cedulaConductor"></p>
+    <p><b class="subtitulo">Teléfono </b> <input type="text" [(ngModel)]="telefonoConductor"></p>
+    <p><b class="subtitulo">Dirección</b> <input type="text" [(ngModel)]="direccionConductor"></p>
     <div class="buttonContainer">
       <button type="button" (click)="volver()">Volver</button>
       <button type="button" (click)="guardar()">Confirmar creación</button>

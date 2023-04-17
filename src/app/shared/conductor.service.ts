@@ -22,15 +22,18 @@ export class ConductorService {
   }
 
   findById(id: number) {
-    return this.http.get<Conductor>(`http://localhost:8080/bus/view/${id}`);
+    return this.http.get<Conductor>(`http://localhost:8080/conductor/view/${id}`);
   }
 
   deleteById(id: number) {
-    return this.http.get<Conductor>(`http://localhost:8080/bus/delete/${id}`);
-    return false;
+    return this.http.get<Conductor>(`http://localhost:8080/conductor/delete/${id}`);
   }
   guardarConductor(conductorNuevo: Conductor):Observable<Conductor> {
     console.log(conductorNuevo);
     return this.http.post<Conductor>(`http://localhost:8080/estacion/add`,conductorNuevo,this.httpOptions)
+  }
+
+  modificarConductor(conductor: Conductor) :Observable<Conductor>  {
+    return this.http.put<Conductor>(`http://localhost:8080/conductor/edit`,conductor,this.httpOptions)
   }
 }

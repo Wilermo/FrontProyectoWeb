@@ -19,4 +19,8 @@ export class HorarioService {
   findAll(): Observable<Horario[]>{
     return this.http.get<Horario[]>(`http://localhost:8080/horario/list`)
   }
+
+  guardarHorario(horario: Horario) : Observable<Horario>{
+    return this.http.post<Horario>(`http://localhost:8080/horario/add`,horario,this.httpOptions)
+  }
 }

@@ -5,19 +5,37 @@
       <div class="selectContainer">
         <label class="subtitulo"> Seleccione un conductor: </label>
         <select [(ngModel)]="conductorSeleccionado">
-          <option *ngFor="let conductor of conductores" [value]="conductor">{{ conductor.nombre }}</option>
+          <option *ngFor="let conductor of conductores" [value]="conductor.id">{{ conductor.nombre }}</option>
         </select>
       </div>
       <div class="selectContainer">
         <label class="subtitulo"> Seleccione un bus: </label>
         <select [(ngModel)]="busSeleccionado">
-          <option *ngFor="let bus of buses" [value]="bus">{{ bus.placa }}</option>
+          <option *ngFor="let bus of buses" [value]="bus.placa">{{ bus.placa }}</option>
         </select>
       </div>
       <div class="selectContainer">
         <label class="subtitulo"> Seleccione un día: </label>
         <select [(ngModel)]="diaSeleccionado">
           <option *ngFor="let dia of dias" [value]="dia">{{ dia }}</option>
+        </select>
+      </div>
+      <div class="selectContainer">
+        <label class="subtitulo"> Seleccione una hora de inicio: </label>
+        <select [(ngModel)]="horaInicio">
+          <option *ngFor="let hora of horas" [value]="hora">{{ hora }}</option>
+        </select>
+      </div>
+      <div class="selectContainer">
+        <label class="subtitulo"> Seleccione una hora de finalización: </label>
+        <select [(ngModel)]="horaFin">
+          <option *ngFor="let hora of horas" [value]="hora">{{ hora }}</option>
+        </select>
+      </div>
+      <div class="selectContainer">
+        <label class="subtitulo"> Seleccione una ruta: </label>
+        <select [(ngModel)]="rutaSeleccionada">
+          <option *ngFor="let ruta of rutas" [value]="ruta.id">{{ ruta.nombreRuta }}</option>
         </select>
       </div>
     </div>
