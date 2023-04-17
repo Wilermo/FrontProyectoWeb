@@ -13,7 +13,6 @@ import {EstacionEditComponent} from "./componentesModel/estacion/estacion-edit/e
 import {EstacionAddComponent} from "./componentesModel/estacion/estacion-add/estacion-add.component";
 import {RutaAddComponent} from "./componentesModel/ruta/ruta-add/ruta-add.component";
 import {RutaViewComponent} from "./componentesModel/ruta/ruta-view/ruta-view.component";
-import {ConductorViewComponent} from "./componentesModel/conductor/conductor-view/conductor-view.component";
 import {BusEditComponent} from "./componentesModel/bus/bus-edit/bus-edit.component";
 import {RutaEditComponent} from "./componentesModel/ruta/ruta-edit/ruta-edit.component";
 
