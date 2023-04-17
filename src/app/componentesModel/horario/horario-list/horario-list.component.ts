@@ -22,4 +22,16 @@ export class HorarioListComponent implements OnInit{
   addHorario() {
     this.router.navigate(['/horario/add']);
   }
+
+  viewHorario(horario: Horario) {
+    this.router.navigate(['/horario/view',horario.id]);
+  }
+
+  editHorario(horario: Horario) {
+    this.router.navigate(['/horario/edit',horario.id]);
+  }
+
+  deleteHorario(horario: Horario) {
+
+  }
 }

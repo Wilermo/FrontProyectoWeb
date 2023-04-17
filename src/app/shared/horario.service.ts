@@ -23,4 +23,8 @@ export class HorarioService {
   guardarHorario(horario: Horario) : Observable<Horario>{
     return this.http.post<Horario>(`http://localhost:8080/horario/add`,horario,this.httpOptions)
   }
+
+  findById(id: number): Observable<Horario> {
+    return this.http.get<Horario>(`http://localhost:8080/horario/view/${id}`,this.httpOptions)
+  }
 }

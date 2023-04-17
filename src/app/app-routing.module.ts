@@ -15,6 +15,8 @@ import {RutaAddComponent} from "./componentesModel/ruta/ruta-add/ruta-add.compon
 import {RutaViewComponent} from "./componentesModel/ruta/ruta-view/ruta-view.component";
 import {BusEditComponent} from "./componentesModel/bus/bus-edit/bus-edit.component";
 import {RutaEditComponent} from "./componentesModel/ruta/ruta-edit/ruta-edit.component";
+import {HorarioViewComponent} from "./componentesModel/horario/horario-view/horario-view.component";
+import {HorarioEditComponent} from "./componentesModel/horario/horario-edit/horario-edit.component";
 import {ConductorEditComponent} from "./componentesModel/conductor/conductor-edit/conductor-edit.component";
 
 
@@ -25,6 +27,8 @@ const routes: Routes = [
   {path: 'bus/edit/:id', component: BusEditComponent},
   {path: 'horario/list', component: HorarioListComponent},
   {path: 'horario/add', component: HorarioAddComponent},
+  {path: 'horario/view/:id', component: HorarioViewComponent},
+  {path: 'horario/edit/:id', component: HorarioEditComponent},
   {path: 'estacion/list', component: EstacionListComponent},
   {path: 'estacion/edit/:id', component: EstacionEditComponent},
   {path: 'estacion/add', component: EstacionAddComponent},

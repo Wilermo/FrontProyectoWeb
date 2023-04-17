@@ -27,13 +27,13 @@
     <td> {{horario.horaInicioStr}}</td>
     <td> {{horario.horaFinStr}}</td>
     <td>
-      <button type="button" >Ver</button>
+      <button type="button" (click)="viewHorario(horario)">Ver</button>
     </td>
     <td>
-      <button type="button">Editar</button>
+      <button type="button" (click)="editHorario(horario)">Editar</button>
     </td>
     <td>
-      <button type="button">Eliminar</button>
+      <button type="button" (click)="deleteHorario(horario)">Eliminar</button>
     </td>
   </tr>
   </tbody>
