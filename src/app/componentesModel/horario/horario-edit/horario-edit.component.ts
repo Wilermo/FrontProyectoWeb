@@ -81,12 +81,12 @@ export class HorarioEditComponent {
       let rutaEscogida: string | undefined;
       this.rutaService.findById(this.rutaSeleccionada).subscribe(result=>{rutaEscogida=result.nombreRuta});
 
-      let horario = new Horario(-1,nombreConductor,this.conductorSeleccionado,this.busSeleccionado,this.diaSeleccionado,this.horaInicio,this.horaFin,rutaEscogida,this.rutaSeleccionada)
+      let horario = new Horario(this.horario?.id,nombreConductor,this.conductorSeleccionado,this.busSeleccionado,this.diaSeleccionado,this.horaInicio,this.horaFin,rutaEscogida,this.rutaSeleccionada)
       console.log(horario);
       let dialogRef = this.dialog.open(ModalConfirmacionCreacionComponent);
       dialogRef.afterClosed().subscribe(result => {
         if (result) {
-          this.horarioService.guardarHorario(horario).subscribe(result => {
+          this.horarioService.modificarHorario(horario).subscribe(result => {
             if (result.idConductorHorario == this.conductorSeleccionado) {
               this.router.navigate(["horario/list"])
             }

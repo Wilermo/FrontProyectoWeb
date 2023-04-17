@@ -2,6 +2,12 @@ import {Component, OnInit} from '@angular/core';
 import {Horario} from "../../../model/horario";
 import {ActivatedRoute, Router} from "@angular/router";
 import {HorarioService} from "../../../shared/horario.service";
+import {ModalConfirmacionComponent} from "../../../utils/modal-confirmacion/modal-confirmacion.component";
+import {
+  ModalInformacionEliminadoComponent
+} from "../../../utils/modal-informacion-eliminado/modal-informacion-eliminado.component";
+import {ModalInformacionErrorComponent} from "../../../utils/modal-informacion-error/modal-informacion-error.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-horario-list',
@@ -13,7 +19,8 @@ export class HorarioListComponent implements OnInit{
 
   constructor(private horarioService: HorarioService,
               private route: ActivatedRoute,
-              private router: Router) { }
+              private router: Router,
+              public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.horarioService.findAll().subscribe(horarios => this.horarios = horarios);
@@ -32,6 +39,22 @@ export class HorarioListComponent implements OnInit{
   }
 
   deleteHorario(horario: Horario) {
+    let dialogRef = this.dialog.open(ModalConfirmacionComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.horarioService.delete(horario?.id).subscribe(result => {
+          if (result) {
+            let dialogRef = this.dialog.open(ModalInformacionEliminadoComponent);
+            dialogRef.afterClosed().subscribe(x => window.location.reload())
+          }else{
+            let dialogRef = this.dialog.open(ModalInformacionErrorComponent);
+            dialogRef.afterClosed().subscribe(x => window.location.reload())
+          }
+        })
 
+      } else {
+        // El usuario canceló la acción
+      }
+    })
   }
 }
