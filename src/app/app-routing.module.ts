@@ -17,6 +17,7 @@ import {BusEditComponent} from "./componentesModel/bus/bus-edit/bus-edit.compone
 import {RutaEditComponent} from "./componentesModel/ruta/ruta-edit/ruta-edit.component";
 import {HorarioViewComponent} from "./componentesModel/horario/horario-view/horario-view.component";
 import {HorarioEditComponent} from "./componentesModel/horario/horario-edit/horario-edit.component";
+import {ConductorEditComponent} from "./componentesModel/conductor/conductor-edit/conductor-edit.component";
 
 
 const routes: Routes = [
@@ -36,6 +37,7 @@ const routes: Routes = [
   {path: 'ruta/edit/:id', component: RutaEditComponent},
   {path: 'ruta/view/:id', component: RutaViewComponent},
   {path: 'conductor/list', component: ConductorListComponent},
+  {path: 'conductor/edit/:id', component: ConductorEditComponent},
   {path: '', pathMatch: 'full', redirectTo: '/horario/list'}
 ];
 

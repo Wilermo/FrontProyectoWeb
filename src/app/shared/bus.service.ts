@@ -26,7 +26,7 @@ export class BusService {
   }
 
   deleteById(id: number) {
-    return this.http.get<Bus>(`http://localhost:8080/bus/delete/${id}`);
+    return this.http.delete<Bus>(`http://localhost:8080/bus/delete/${id}`);
   }
 
   modificarBus(bus : Bus) : Observable<Bus> {
