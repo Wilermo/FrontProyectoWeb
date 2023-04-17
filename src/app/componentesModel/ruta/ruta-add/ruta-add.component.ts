@@ -22,7 +22,7 @@ import {
 export class RutaAddComponent implements OnInit{
   entradaTexto: string | undefined;
 
-  ruta: Ruta | undefined;
+
 
   constructor(private rutaService: RutaService,
               private estacionService: EstacionService,
@@ -70,13 +70,22 @@ export class RutaAddComponent implements OnInit{
         console.log(pair[0]+ ' : '+ pair[1]);
       }
 
-      this.ruta = new Ruta(-1, inputValue,this.estacionesSeleccionadas);
-      this.rutaService.guardarRuta(this.ruta).subscribe(result=>{
-        if(result.nombreRuta == inputValue){
-          let dialogRef = this.dialog.open(ModalConfirmacionCreacionComponent);
+      let ruta = new Ruta(-1, inputValue,this.estacionesSeleccionadas);
+
+      let dialogRef = this.dialog.open(ModalConfirmacionCreacionComponent);
+      dialogRef.afterClosed().subscribe(result =>{
+        if(result){
+          this.rutaService.guardarRuta(ruta).subscribe(result=>{
+            if(result.nombreRuta == inputValue){
+                this.router.navigate(["ruta/list"])
+            }
+          })
+        }else{
+          let dialogRef = this.dialog.open(ModalInformacionErrorComponent);
           dialogRef.afterClosed().subscribe(x => this.router.navigate(['/ruta/list']))
         }
       })
+
     } else {
       let dialogRef = this.dialog.open(ModalInformacionErrorComponent);
       dialogRef.afterClosed().subscribe(x => this.router.navigate(['/ruta/list']))
