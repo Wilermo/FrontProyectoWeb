@@ -6,7 +6,7 @@ import {DiasSemana} from "./diasSemana";
 
 export class Horario {
   constructor(
-    public id: number,
+    public id: number | undefined,
     public conductorHorario: string,
     public idConductorHorario:number | undefined,
     public busHorario: string,
