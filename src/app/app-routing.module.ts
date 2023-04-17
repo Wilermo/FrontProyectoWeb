@@ -33,7 +33,6 @@ const routes: Routes = [
   {path: 'ruta/edit/:id', component: RutaEditComponent},
   {path: 'ruta/view/:id', component: RutaViewComponent},
   {path: 'conductor/list', component: ConductorListComponent},
-  {path: 'conductor/view', component: ConductorViewComponent},
   {path: '', pathMatch: 'full', redirectTo: '/horario/list'}
 ];
 

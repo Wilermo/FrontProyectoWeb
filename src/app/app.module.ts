@@ -25,7 +25,6 @@ import { RutaViewComponent } from './componentesModel/ruta/ruta-view/ruta-view.c
 import { RutaEditComponent } from './componentesModel/ruta/ruta-edit/ruta-edit.component';
 import { ConductorEditComponent } from './componentesModel/conductor/conductor-edit/conductor-edit.component';
 import { ConductorAddComponent } from './componentesModel/conductor/conductor-add/conductor-add.component';
-import { ConductorViewComponent } from './componentesModel/conductor/conductor-view/conductor-view.component';
 import { HorarioViewComponent } from './componentesModel/horario/horario-view/horario-view.component';
 import { HorarioEditComponent } from './componentesModel/horario/horario-edit/horario-edit.component';
 import {FormsModule} from "@angular/forms";
@@ -54,7 +53,6 @@ import { ModalConfirmacionCreacionComponent } from './utils/modal-confirmacion-c
     RutaEditComponent,
     ConductorEditComponent,
     ConductorAddComponent,
-    ConductorViewComponent,
     HorarioViewComponent,
     HorarioEditComponent,
     ModalConfirmacionCreacionComponent,
