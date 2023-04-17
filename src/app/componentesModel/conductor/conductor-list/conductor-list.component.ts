@@ -35,7 +35,7 @@ export class ConductorListComponent implements OnInit{
   }
 
   editarConductor(conductor: Conductor) {
-    this.router.navigate(["/conductor/edit"])
+    this.router.navigate(["/conductor/edit", conductor.id])
   }
 
   eliminarConductor(conductorSeleccionado: Conductor) {
