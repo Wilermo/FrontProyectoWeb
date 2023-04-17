@@ -36,7 +36,7 @@ export class RutaListComponent implements  OnInit{
   }
 
   editRuta(ruta: Ruta) {
-
+    this.router.navigate(['/ruta/edit', ruta.id]);
   }
 
   deleteRuta(ruta: Ruta) {
