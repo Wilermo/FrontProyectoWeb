@@ -14,6 +14,7 @@ import {EstacionAddComponent} from "./componentesModel/estacion/estacion-add/est
 import {RutaAddComponent} from "./componentesModel/ruta/ruta-add/ruta-add.component";
 import {RutaViewComponent} from "./componentesModel/ruta/ruta-view/ruta-view.component";
 import {ConductorViewComponent} from "./componentesModel/conductor/conductor-view/conductor-view.component";
+import {RutaEditComponent} from "./componentesModel/ruta/ruta-edit/ruta-edit.component";
 import {BusEditComponent} from "./componentesModel/bus/bus-edit/bus-edit.component";
 
 const routes: Routes = [
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path: 'estacion/add', component: EstacionAddComponent},
   {path: 'ruta/list', component: RutaListComponent},
   {path: 'ruta/add', component: RutaAddComponent},
+  {path: 'ruta/edit/:id', component: RutaEditComponent},
   {path: 'ruta/view/:id', component: RutaViewComponent},
   {path: 'conductor/list', component: ConductorListComponent},
   {path: 'conductor/view', component: ConductorViewComponent},

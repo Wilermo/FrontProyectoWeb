@@ -3,6 +3,7 @@ import {Bus} from "../model/bus";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Ruta} from "../model/ruta";
 import {Observable} from "rxjs";
+import {Estacion} from "../model/estacion";
 
 @Injectable({
   providedIn: 'root'
@@ -31,5 +32,10 @@ export class RutaService {
 
   guardarRuta(ruta: Ruta) : Observable<Ruta>{
     return this.http.post<Ruta>(`http://localhost:8080/ruta/add`,ruta,this.httpOptions);
+  }
+
+
+  modificarRuta(ruta: Ruta) :Observable<Ruta>{
+    return this.http.put<Ruta>(`http://localhost:8080/ruta/edit`,ruta,this.httpOptions)
   }
 }

@@ -1,1 +1,35 @@
-<h1>Añadir horario</h1>
+<div>
+  <h1>Crear horario</h1>
+  <div class="container">
+    <div class="allSelectContainer">
+      <div class="selectContainer">
+        <label class="subtitulo"> Seleccione un conductor: </label>
+        <select [(ngModel)]="conductorSeleccionado">
+          <option *ngFor="let conductor of conductores" [value]="conductor">{{ conductor.nombre }}</option>
+        </select>
+      </div>
+      <div class="selectContainer">
+        <label class="subtitulo"> Seleccione un bus: </label>
+        <select [(ngModel)]="busSeleccionado">
+          <option *ngFor="let bus of buses" [value]="bus">{{ bus.placa }}</option>
+        </select>
+      </div>
+      <div class="selectContainer">
+        <label class="subtitulo"> Seleccione un día: </label>
+        <select [(ngModel)]="diaSeleccionado">
+          <option *ngFor="let dia of dias" [value]="dia">{{ dia }}</option>
+        </select>
+      </div>
+    </div>
+
+
+
+    <br><br>
+    <div class="buttonContainer">
+      <button type="button" (click)="volver()">Volver</button>
+      <button type="button" (click)="guardar()">Confirmar creación</button>
+    </div>
+  </div>
+
+</div>
+

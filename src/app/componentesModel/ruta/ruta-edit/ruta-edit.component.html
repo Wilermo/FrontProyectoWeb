@@ -1,1 +1,21 @@
-<p>ruta-edit works!</p>
+<div>
+  <h1>Modificar ruta</h1>
+  <div class="container">
+    <p><b class="subtitulo">Nombre actual: </b> {{ruta?.nombreRuta}}</p>
+    <p><b class="subtitulo">Nuevo nombre: </b> <input type="text"   [(ngModel)]="entradaTexto"></p>
+
+    <label>Estaciones para la ruta:</label><br><br>
+    <form [(ngModel)]="form">
+      <div *ngFor="let estacion of estaciones" [attr.id]="estacion?.nombre" [attr.name]="estacion?.nombre">
+        <input type="checkbox" (change)="onCheckboxChange(estacion.nombre, $event)"><label>{{estacion?.nombre}}</label>
+      </div>
+    </form>
+    <br><br>
+    <div class="buttonContainer">
+      <button type="button" (click)="volver()">Volver</button>
+      <button type="button" (click)="guardar()">Confirmar edición</button>
+    </div>
+  </div>
+
+</div>
+
