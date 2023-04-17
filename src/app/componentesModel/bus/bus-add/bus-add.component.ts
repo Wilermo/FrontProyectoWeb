@@ -5,6 +5,9 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
 import {ModalInformacionErrorComponent} from "../../../utils/modal-informacion-error/modal-informacion-error.component";
 import {ModalConfirmacionComponent} from "../../../utils/modal-confirmacion/modal-confirmacion.component";
+import {
+  ModalConfirmacionCreacionComponent
+} from "../../../utils/modal-confirmacion-creacion/modal-confirmacion-creacion.component";
 
 
 @Component({
@@ -32,7 +35,7 @@ export class BusAddComponent {
       this.nuevoBus = new Bus(inputPlaca,inputModelo,-1)
       this.busService.guardarBus(this.nuevoBus).subscribe(result=>{
         if(result.placa == inputPlaca && result.modelo == inputModelo){
-          let dialogRef = this.dialog.open(ModalConfirmacionComponent);
+          let dialogRef = this.dialog.open(ModalConfirmacionCreacionComponent);
           dialogRef.afterClosed().subscribe(x => this.router.navigate(['/bus/list']))
         }
       })

@@ -29,8 +29,12 @@ export class BusService {
     return this.http.get<Bus>(`http://localhost:8080/bus/delete/${id}`);
   }
 
+  modificarBus(bus : Bus) : Observable<Bus> {
+    return this.http.put<Bus>(`http://localhost:8080/bus/edit`,bus,this.httpOptions)
+  }
+
   guardarBus(nuevoBus : Bus) : Observable<Bus>{
     console.log(nuevoBus);
-    return this.http.post<Bus>('http://localhost:8080/bus/add',nuevoBus,this.httpOptions) 
+    return this.http.post<Bus>('http://localhost:8080/bus/add',nuevoBus,this.httpOptions)
   }
 }
