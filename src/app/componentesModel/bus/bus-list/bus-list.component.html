@@ -1,6 +1,6 @@
 <h1>Buses</h1>
 
-<div class="container">
+<div class="container" *ngIf="keyCloakService.isUserInRole('ROLE_COORDINADOR')||keyCloakService.isUserInRole('ROLE_UNIVERSAL')">
   <button type="button" (click)="addBus()" >+ Añadir bus</button>
 </div>
 
@@ -12,8 +12,8 @@
     <th>Placa</th>
     <th>Modelo</th>
     <th>Ver detalles bus</th>
-    <th>Editar bus</th>
-    <th>Eliminar bus</th>
+    <th *ngIf="keyCloakService.isUserInRole('ROLE_COORDINADOR')||keyCloakService.isUserInRole('ROLE_UNIVERSAL')">Editar bus</th>
+    <th *ngIf="keyCloakService.isUserInRole('ROLE_COORDINADOR')||keyCloakService.isUserInRole('ROLE_UNIVERSAL')">Eliminar bus</th>
   </tr>
   </thead>
   <tbody>
@@ -24,10 +24,10 @@
     <td>
       <button type="button" (click)="verBus(bus)">Ver</button>
     </td>
-    <td>
+    <td *ngIf="keyCloakService.isUserInRole('ROLE_COORDINADOR')||keyCloakService.isUserInRole('ROLE_UNIVERSAL')">
       <button type="button" (click)="editBus(bus)">Editar</button>
     </td>
-    <td>
+    <td *ngIf="keyCloakService.isUserInRole('ROLE_COORDINADOR')||keyCloakService.isUserInRole('ROLE_UNIVERSAL')">
       <button type="button" (click)="deleteBus(bus)">Eliminar</button>
     </td>
   </tr>

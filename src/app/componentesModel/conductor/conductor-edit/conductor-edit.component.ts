@@ -6,6 +6,9 @@ import {Conductor} from "../../../model/conductor";
 import {switchMap} from "rxjs/operators";
 import {ModalConfirmacionComponent} from "../../../utils/modal-confirmacion/modal-confirmacion.component";
 import {ModalInformacionErrorComponent} from "../../../utils/modal-informacion-error/modal-informacion-error.component";
+import {
+  ModalConfirmacionCreacionComponent
+} from "../../../utils/modal-confirmacion-creacion/modal-confirmacion-creacion.component";
 
 @Component({
   selector: 'app-conductor-edit',
@@ -47,7 +50,7 @@ export class ConductorEditComponent implements OnInit{
         this.conductor.telefono=telefono;
         this.conductorService.modificarConductor(this.conductor).subscribe(result=>{
           if(result){
-            let dialogRef = this.dialog.open(ModalConfirmacionComponent);
+            let dialogRef = this.dialog.open(ModalConfirmacionCreacionComponent);
             dialogRef.afterClosed().subscribe(x => this.router.navigate(['/conductor/list']))
           }else{
             let dialogRef =this.dialog.open(ModalInformacionErrorComponent);

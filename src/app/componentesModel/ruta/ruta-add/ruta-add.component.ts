@@ -78,6 +78,9 @@ export class RutaAddComponent implements OnInit{
           this.rutaService.guardarRuta(ruta).subscribe(result=>{
             if(result.nombreRuta == inputValue){
                 this.router.navigate(["ruta/list"])
+            }else{
+              let dialogRef = this.dialog.open(ModalInformacionErrorComponent);
+              dialogRef.afterClosed().subscribe(x => this.router.navigate(['/ruta/list']))
             }
           })
         }else{

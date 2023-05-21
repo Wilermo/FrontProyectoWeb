@@ -3,12 +3,12 @@
   <div class="container">
     <p><b class="subtitulo">Nombre actual: </b> {{conductor?.nombre}}</p>
     <p><b class="subtitulo">Nuevo nombre: </b> <input type="text"   [(ngModel)]="nombreConductor"></p>
-    <p><b class="subtitulo">Nombre actual: </b> {{conductor?.cedula}}</p>
-    <p><b class="subtitulo">Nuevo nombre: </b> <input type="text"   [(ngModel)]="cedulaConductor"></p>
-    <p><b class="subtitulo">Nombre actual: </b> {{conductor?.telefono}}</p>
-    <p><b class="subtitulo">Nuevo nombre: </b> <input type="text"   [(ngModel)]="telefonoConductor"></p>
-    <p><b class="subtitulo">Nombre actual: </b> {{conductor?.direccion}}</p>
-    <p><b class="subtitulo">Nuevo nombre: </b> <input type="text"   [(ngModel)]="direccionConductor"></p>
+    <p><b class="subtitulo">Cedula actual: </b> {{conductor?.cedula}}</p>
+    <p><b class="subtitulo">Nueva cedula: </b> <input type="text"   [(ngModel)]="cedulaConductor"></p>
+    <p><b class="subtitulo">Telefono actual: </b> {{conductor?.telefono}}</p>
+    <p><b class="subtitulo">Nuevo telefono: </b> <input type="text"   [(ngModel)]="telefonoConductor"></p>
+    <p><b class="subtitulo">Direccion actual: </b> {{conductor?.direccion}}</p>
+    <p><b class="subtitulo">Nueva direccion: </b> <input type="text"   [(ngModel)]="direccionConductor"></p>
     <div class="buttonContainer">
       <button type="button" (click)="volver()">Volver</button>
       <button type="button" (click)="editar()">Confirmar edición</button>

@@ -23,6 +23,8 @@ export class EstacionEditComponent implements OnInit {
   estacion : Estacion | undefined;
   entradaTexto : string | undefined;
 
+  entradaMap : number | undefined;
+
   ngOnInit() {
     this.route.paramMap.pipe(switchMap(params =>
       this.estacionService.findById(+params.get('id')!))).subscribe(estacion => this.estacion = estacion);
@@ -34,9 +36,11 @@ export class EstacionEditComponent implements OnInit {
 
   editar() {
     let inputValue = this.entradaTexto;
-    if(inputValue!= undefined&& inputValue!=""){
+    if(inputValue!= undefined && inputValue!=""){
+
       if(this.estacion!= undefined){
         this.estacion.nombre=inputValue;
+
         this.estacionService.modificarEstacion(this.estacion).subscribe(result=>{
           if(result){
             let dialogRef = this.dialog.open(ModalConfirmacionComponent);
@@ -49,6 +53,7 @@ export class EstacionEditComponent implements OnInit {
 
         }
     }else{
+
       let dialogRef =this.dialog.open(ModalInformacionErrorComponent);
       dialogRef.afterClosed().subscribe(x => this.router.navigate(['/estacion/list']))
 

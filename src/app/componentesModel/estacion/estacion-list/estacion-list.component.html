@@ -1,6 +1,6 @@
 <h1>Estaciones</h1>
 
-<div class="container">
+<div class="container" *ngIf="keyCloakService.isUserInRole('ROLE_ADMINISTRADOR')||keyCloakService.isUserInRole('ROLE_UNIVERSAL')">
   <button type="button" (click)="addEstacion()" >+ Añadir estacion</button>
 </div>
 
@@ -9,20 +9,22 @@
 
   <thead>
   <tr>
+    <th>Orden </th>
     <th>Nombre</th>
-    <th>Editar estación</th>
-    <th>Eliminar estación</th>
+    <th *ngIf="keyCloakService.isUserInRole('ROLE_ADMINISTRADOR')||keyCloakService.isUserInRole('ROLE_UNIVERSAL')">Editar estación</th>
+    <th *ngIf="keyCloakService.isUserInRole('ROLE_ADMINISTRADOR')||keyCloakService.isUserInRole('ROLE_UNIVERSAL')">Eliminar estación</th>
   </tr>
   </thead>
   <tbody>
 
   <tr *ngFor="let estacion of estaciones" >
+    <td>{{estacion.mapKey}}</td>
     <td> {{estacion.nombre}}</td>
-    <td>
+    <td  *ngIf="keyCloakService.isUserInRole('ROLE_ADMINISTRADOR')||keyCloakService.isUserInRole('ROLE_UNIVERSAL')">
       <button type="button" (click)="editEstacion(estacion)">Editar</button>
     </td>
-    <td>
-      <button type="button" (click)="eliminarEstacion(estacion)">Eliminar</button>
+    <td *ngIf="keyCloakService.isUserInRole('ROLE_ADMINISTRADOR')||keyCloakService.isUserInRole('ROLE_UNIVERSAL')">
+      <button type="button" (click)="eliminarEstacion(estacion)" >Eliminar</button>
     </td>
   </tr>
   </tbody>

@@ -5,7 +5,7 @@
     <label>Estaciones para la ruta:</label><br><br>
     <form [(ngModel)]="form">
       <div *ngFor="let estacion of estaciones" [attr.id]="estacion?.nombre" [attr.name]="estacion?.nombre">
-        <input type="checkbox" (change)="onCheckboxChange(estacion.nombre, $event)"><label>{{estacion?.nombre}}</label>
+        <input type="checkbox" (change)="onCheckboxChange(estacion.nombre, $event)"><label>{{estacion?.nombre}}</label><label> ({{estacion?.mapKey}})</label>
       </div>
     </form>
     <br><br>

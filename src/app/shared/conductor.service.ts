@@ -25,12 +25,12 @@ export class ConductorService {
     return this.http.get<Conductor>(`http://localhost:8080/conductor/view/${id}`);
   }
 
-  deleteById(id: number) {
-    return this.http.get<Conductor>(`http://localhost:8080/conductor/delete/${id}`);
+  deleteById(id: number): Observable<boolean> {
+    return this.http.delete<boolean>(`http://localhost:8080/conductor/delete/${id}`);
   }
   guardarConductor(conductorNuevo: Conductor):Observable<Conductor> {
     console.log(conductorNuevo);
-    return this.http.post<Conductor>(`http://localhost:8080/estacion/add`,conductorNuevo,this.httpOptions)
+    return this.http.post<Conductor>(`http://localhost:8080/conductor/add`,conductorNuevo,this.httpOptions)
   }
 
   modificarConductor(conductor: Conductor) :Observable<Conductor>  {

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {APP_INITIALIZER, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,7 +13,6 @@ import { ConductorListComponent } from './componentesModel/conductor/conductor-l
 import { HorarioAddComponent } from './componentesModel/horario/horario-add/horario-add.component';
 import { RutaListComponent } from './componentesModel/ruta/ruta-list/ruta-list.component';
 import { EstacionListComponent } from './componentesModel/estacion/estacion-list/estacion-list.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ModalConfirmacionComponent} from "./utils/modal-confirmacion/modal-confirmacion.component";
 import { MatDialogModule } from '@angular/material/dialog';
 import { ModalInformacionEliminadoComponent } from './utils/modal-informacion-eliminado/modal-informacion-eliminado.component';
@@ -29,6 +28,24 @@ import { HorarioViewComponent } from './componentesModel/horario/horario-view/ho
 import { HorarioEditComponent } from './componentesModel/horario/horario-edit/horario-edit.component';
 import {FormsModule} from "@angular/forms";
 import { ModalConfirmacionCreacionComponent } from './utils/modal-confirmacion-creacion/modal-confirmacion-creacion.component';
+import {KeycloakAngularModule, KeycloakService} from "keycloak-angular";
+
+
+function initializeKeycloak(keycloak: KeycloakService) {
+  return () =>
+    keycloak.init({
+      config: {
+        url: 'http://localhost:8180',
+        realm: 'DWRealm',
+        clientId: 'dw-app'
+      },
+      initOptions: {
+        onLoad: 'check-sso',
+        silentCheckSsoRedirectUri:
+          window.location.origin + '/assets/silent-check-sso.html'
+      }
+    });
+}
 
 
 @NgModule({
@@ -64,11 +81,18 @@ import { ModalConfirmacionCreacionComponent } from './utils/modal-confirmacion-c
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        BrowserAnimationsModule,
         MatDialogModule,
-        FormsModule
+        FormsModule,
+        KeycloakAngularModule
     ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers :[
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeKeycloak,
+      multi: true,
+      deps: [KeycloakService]
+    }
+  ],
+ bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,6 @@
 <h1>Rutas</h1>
 
-<div class="container">
+<div class="container" *ngIf="keyCloakService.isUserInRole('ROLE_ADMINISTRADOR')||keyCloakService.isUserInRole('ROLE_UNIVERSAL')">
   <button type="button" (click)="addRuta()" >+ Añadir ruta</button>
 </div>
 
@@ -11,8 +11,8 @@
   <tr>
     <th>Nombre Ruta</th>
     <th>Ver detalles ruta</th>
-    <th>Editar ruta</th>
-    <th>Eliminar ruta</th>
+    <th *ngIf="keyCloakService.isUserInRole('ROLE_ADMINISTRADOR')||keyCloakService.isUserInRole('ROLE_UNIVERSAL')">Editar ruta</th>
+    <th *ngIf="keyCloakService.isUserInRole('ROLE_ADMINISTRADOR')||keyCloakService.isUserInRole('ROLE_UNIVERSAL')">Eliminar ruta</th>
   </tr>
   </thead>
   <tbody>
@@ -23,10 +23,10 @@
     <td>
       <button type="button" (click)="verEstaciones(ruta)">Ver Estaciones</button>
     </td>
-    <td>
+    <td *ngIf="keyCloakService.isUserInRole('ROLE_ADMINISTRADOR')||keyCloakService.isUserInRole('ROLE_UNIVERSAL')">
       <button type="button" (click)="editRuta(ruta)">Editar</button>
     </td>
-    <td>
+    <td *ngIf="keyCloakService.isUserInRole('ROLE_ADMINISTRADOR')||keyCloakService.isUserInRole('ROLE_UNIVERSAL')">
       <button type="button" (click)="deleteRuta(ruta)">Eliminar</button>
     </td>
   </tr>

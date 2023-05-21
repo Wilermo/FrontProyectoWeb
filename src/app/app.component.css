@@ -33,13 +33,6 @@ p{
   font-family: "Bebas Neue",sans-serif;
 }
 
-.container{
-  border-radius: 25px;
-  background: #73AD21;
-  padding: 20px;
-  width: auto;
-  height: auto;
-}
 
 .menuPrincipal{
   display: flex;
@@ -125,3 +118,29 @@ nav a:focus::after {
   background-color: red;
   border: 2px solid black;
 }
+
+
+.container button{
+  margin-left: auto;
+  margin-right:auto;
+  padding: 8px 20px;
+  background-color:  #DB2C33;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  border: 1px solid antiquewhite;
+  box-shadow: antiquewhite 2px 2px 0 0;
+  font-size: large;
+  transition: transform 0.1s;
+}
+
+
+button:hover {
+  transform: scale(1.2);
+}
+
+.container {
+  display: flex;
+  margin: 20px 0 20px auto;
+}
+
