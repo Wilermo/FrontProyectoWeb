@@ -4,13 +4,18 @@
     <h2>Sistema de gestión de buses</h2>
   </div>
 
+  <div class="container">
+    <button *ngIf="!isLogged" type="button" (click)="logIn()">Iniciar sesión</button>
+    <button *ngIf="isLogged" type="button" (click)="logOut()">Cerrar sesión</button>
+  </div>
+
   <nav class="menuPrincipal">
 
     <a routerLinkActive="menuSelected" [routerLink]="['/bus/list']">Buses</a>
 
-    <a routerLinkActive="menuSelected" [routerLink]="['/conductor/list']">Conductores</a>
+    <a routerLinkActive="menuSelected" [routerLink]="['/conductor/list']" *ngIf="keyCloakService.isUserInRole('ROLE_COORDINADOR')||keyCloakService.isUserInRole('ROLE_UNIVERSAL')">Conductores</a>
 
-    <a routerLinkActive="menuSelected" [routerLink]="['/horario/list']">Horarios</a>
+    <a routerLinkActive="menuSelected" [routerLink]="['/horario/list']" *ngIf="keyCloakService.isUserInRole('ROLE_COORDINADOR')||keyCloakService.isUserInRole('ROLE_UNIVERSAL')">Horarios</a>
 
     <a routerLinkActive="menuSelected" [routerLink]="['/ruta/list']">Rutas</a>
 

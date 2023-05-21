@@ -9,6 +9,7 @@ import {
   ModalInformacionEliminadoComponent
 } from "../../../utils/modal-informacion-eliminado/modal-informacion-eliminado.component";
 import {ModalInformacionErrorComponent} from "../../../utils/modal-informacion-error/modal-informacion-error.component";
+import {KeycloakService} from "keycloak-angular";
 
 @Component({
   selector: 'app-ruta-list',
@@ -20,9 +21,12 @@ export class RutaListComponent implements  OnInit{
   constructor(private rutaService: RutaService,
               private route: ActivatedRoute,
               private router: Router,
-              public dialog: MatDialog) { }
+              public dialog: MatDialog,
+              public keyCloakService: KeycloakService
+              ) { }
 
   rutas : Ruta[] |undefined
+
   ngOnInit() {
     this.rutaService.findAll().subscribe(rutas => this.rutas = rutas);
   }

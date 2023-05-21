@@ -10,6 +10,7 @@ import {
 } from "../../../utils/modal-informacion-eliminado/modal-informacion-eliminado.component";
 import {Bus} from "../../../model/bus";
 import {ModalInformacionErrorComponent} from "../../../utils/modal-informacion-error/modal-informacion-error.component";
+import {KeycloakService} from "keycloak-angular";
 
 @Component({
   selector: 'app-estacion-list',
@@ -21,11 +22,13 @@ export class EstacionListComponent implements OnInit {
   constructor(private estacionService: EstacionService,
               private route: ActivatedRoute,
               private router: Router,
-              public dialog: MatDialog
+              public dialog: MatDialog,
+              public readonly keyCloakService: KeycloakService
   ) {
   }
 
   estaciones: Estacion [] | undefined;
+
 
 
   ngOnInit(): void {

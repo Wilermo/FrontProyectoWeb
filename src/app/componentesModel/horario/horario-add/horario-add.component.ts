@@ -86,6 +86,10 @@ export class HorarioAddComponent implements OnInit {
           this.horarioService.guardarHorario(horario).subscribe(result => {
             if (result.idConductorHorario == this.conductorSeleccionado) {
               this.router.navigate(["horario/list"])
+            }else{
+              let dialogRef = this.dialog.open(ModalInformacionErrorComponent);
+              dialogRef.afterClosed().subscribe(x => this.router.navigate(['/horario/list']))
+
             }
           })
         } else {

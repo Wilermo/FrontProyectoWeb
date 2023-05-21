@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {EstacionService} from "../../../shared/estacion.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
@@ -8,6 +8,7 @@ import {ModalConfirmacionComponent} from "../../../utils/modal-confirmacion/moda
 import {
   ModalConfirmacionCreacionComponent
 } from "../../../utils/modal-confirmacion-creacion/modal-confirmacion-creacion.component";
+import {map} from "rxjs";
 
 @Component({
   selector: 'app-estacion-add',
@@ -15,7 +16,7 @@ import {
   styleUrls: ['./estacion-add.component.css'],
 
 })
-export class EstacionAddComponent {
+export class EstacionAddComponent implements OnInit {
 
   constructor(private estacionService: EstacionService,
               private route: ActivatedRoute,
@@ -27,6 +28,13 @@ export class EstacionAddComponent {
   estacionNueva: Estacion | undefined;
   entradaTexto: string | undefined;
 
+  estaciones : Estacion[] | undefined;
+  estacionPrevia: number | undefined;
+  estacionSiguiente: number | undefined;
+
+  ngOnInit() {
+    this.estacionService.findAll().subscribe(result => this.estaciones = result);
+  }
 
   volver() {
     this.router.navigate(['/estacion/list']);
@@ -34,8 +42,12 @@ export class EstacionAddComponent {
 
   guardar() {
     let inputValue = this.entradaTexto;
+    let mapPrevio = 0;
     if (inputValue != undefined && inputValue != "") {
-      this.estacionNueva = new Estacion(-1, inputValue)
+      if(this.estacionPrevia == undefined ){
+        this.estacionPrevia=0;
+      }
+      this.estacionNueva = new Estacion(-1, inputValue, +this.estacionPrevia+1)
       this.estacionService.guardarEstacion(this.estacionNueva).subscribe(result=>{
         if(result.nombre == inputValue){
           let dialogRef = this.dialog.open(ModalConfirmacionCreacionComponent);

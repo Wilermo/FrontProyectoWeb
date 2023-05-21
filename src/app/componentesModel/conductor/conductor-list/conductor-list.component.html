@@ -13,7 +13,6 @@
     <th>Cedula</th>
     <th>Teléfono</th>
     <th>Dirección</th>
-    <th>Ver conductor</th>
     <th>Editar conductor</th>
     <th>Eliminar conductor</th>
   </tr>
@@ -23,11 +22,9 @@
   <tr *ngFor="let conductor of conductores" >
     <td> {{conductor.nombre}}</td>
     <td> {{conductor.cedula}}</td>
-    <td> {{conductor.direccion}}</td>
     <td> {{conductor.telefono}}</td>
-    <td>
-      <button type="button" (click)="verConductor(conductor)">Ver</button>
-    </td>
+    <td> {{conductor.direccion}}</td>
+
     <td>
       <button type="button" (click)="editarConductor(conductor)">Editar</button>
     </td>
@@ -37,4 +34,3 @@
   </tr>
   </tbody>
 </table>
-

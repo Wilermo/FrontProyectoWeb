@@ -18,27 +18,32 @@ import {RutaEditComponent} from "./componentesModel/ruta/ruta-edit/ruta-edit.com
 import {HorarioViewComponent} from "./componentesModel/horario/horario-view/horario-view.component";
 import {HorarioEditComponent} from "./componentesModel/horario/horario-edit/horario-edit.component";
 import {ConductorEditComponent} from "./componentesModel/conductor/conductor-edit/conductor-edit.component";
+import {ConductorAddComponent} from "./componentesModel/conductor/conductor-add/conductor-add.component";
+import {AuthGuard} from "./guard/auth.guard";
+
 
 
 const routes: Routes = [
   {path: 'bus/list', component: BusListComponent},
-  {path: 'bus/add', component: BusAddComponent},
+  {path: 'bus/add', component: BusAddComponent,data:{roles:["ROLE_COORDINADOR","ROLE_UNIVERSAL"]} ,canActivate: [AuthGuard]} ,
   {path: 'bus/view/:id', component: BusViewComponent},
-  {path: 'bus/edit/:id', component: BusEditComponent},
-  {path: 'horario/list', component: HorarioListComponent},
-  {path: 'horario/add', component: HorarioAddComponent},
-  {path: 'horario/view/:id', component: HorarioViewComponent},
-  {path: 'horario/edit/:id', component: HorarioEditComponent},
+  {path: 'bus/edit/:id', component: BusEditComponent,data:{roles:["ROLE_COORDINADOR","ROLE_UNIVERSAL"]} ,canActivate: [AuthGuard] },
+  {path: 'horario/list', component: HorarioListComponent,data:{roles:["ROLE_COORDINADOR","ROLE_UNIVERSAL"]} ,canActivate: [AuthGuard] },
+  {path: 'horario/add', component: HorarioAddComponent,data:{roles:["ROLE_COORDINADOR","ROLE_UNIVERSAL"]} ,canActivate: [AuthGuard]},
+  {path: 'horario/view/:id', component: HorarioViewComponent,data:{roles:["ROLE_COORDINADOR","ROLE_UNIVERSAL"]} ,canActivate: [AuthGuard]},
+  {path: 'horario/edit/:id', component: HorarioEditComponent,data:{roles:["ROLE_COORDINADOR","ROLE_UNIVERSAL"]} ,canActivate: [AuthGuard]},
   {path: 'estacion/list', component: EstacionListComponent},
-  {path: 'estacion/edit/:id', component: EstacionEditComponent},
-  {path: 'estacion/add', component: EstacionAddComponent},
+  {path: 'estacion/edit/:id', component: EstacionEditComponent,data:{roles:["ROLE_ADMINISTRADOR","ROLE_UNIVERSAL"]} ,canActivate: [AuthGuard]},
+  {path: 'estacion/add', component: EstacionAddComponent,data:{roles:["ROLE_ADMINISTRADOR","ROLE_UNIVERSAL"]} ,canActivate: [AuthGuard]},
   {path: 'ruta/list', component: RutaListComponent},
-  {path: 'ruta/add', component: RutaAddComponent},
-  {path: 'ruta/edit/:id', component: RutaEditComponent},
+  {path: 'ruta/add', component: RutaAddComponent,data:{roles:["ROLE_ADMINISTRADOR","ROLE_UNIVERSAL"]} ,canActivate: [AuthGuard]},
+  {path: 'ruta/edit/:id', component: RutaEditComponent,data:{roles:["ROLE_ADMINISTRADOR","ROLE_UNIVERSAL"]} ,canActivate: [AuthGuard]},
   {path: 'ruta/view/:id', component: RutaViewComponent},
-  {path: 'conductor/list', component: ConductorListComponent},
-  {path: 'conductor/edit/:id', component: ConductorEditComponent},
-  {path: '', pathMatch: 'full', redirectTo: '/horario/list'}
+  {path: 'conductor/list', component: ConductorListComponent,data:{roles:["ROLE_COORDINADOR","ROLE_UNIVERSAL"]} ,canActivate: [AuthGuard] },
+  {path: 'conductor/edit/:id', component: ConductorEditComponent,data:{roles:["ROLE_COORDINADOR","ROLE_UNIVERSAL"]} ,canActivate: [AuthGuard] },
+  {path: 'conductor/add', component: ConductorAddComponent,data:{roles:["ROLE_COORDINADOR","ROLE_UNIVERSAL"]} ,canActivate: [AuthGuard] },
+  {path: '', pathMatch: 'full', redirectTo: '/bus/list'}
+
 ];
 
 
