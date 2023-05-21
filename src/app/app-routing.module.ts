@@ -22,6 +22,7 @@ import {ConductorAddComponent} from "./componentesModel/conductor/conductor-add/
 import {AuthGuard} from "./guard/auth.guard";
 
 
+
 const routes: Routes = [
   {path: 'bus/list', component: BusListComponent},
   {path: 'bus/add', component: BusAddComponent,data:{roles:["ROLE_COORDINADOR","ROLE_UNIVERSAL"]} ,canActivate: [AuthGuard]} ,
@@ -42,6 +43,7 @@ const routes: Routes = [
   {path: 'conductor/edit/:id', component: ConductorEditComponent,data:{roles:["ROLE_COORDINADOR","ROLE_UNIVERSAL"]} ,canActivate: [AuthGuard] },
   {path: 'conductor/add', component: ConductorAddComponent,data:{roles:["ROLE_COORDINADOR","ROLE_UNIVERSAL"]} ,canActivate: [AuthGuard] },
   {path: '', pathMatch: 'full', redirectTo: '/bus/list'}
+
 ];
 
 
