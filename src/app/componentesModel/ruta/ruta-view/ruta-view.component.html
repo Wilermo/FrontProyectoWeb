@@ -2,10 +2,10 @@
 <div>
   <h1>Ruta</h1>
   <div class="container">
-    <p><b class="subtitulo">Nombre: </b> {{ruta?.nombreRuta}}</p>
+    <p id="nombreRutaId"><b class="subtitulo">Nombre: </b> {{ruta?.nombreRuta}}</p>
     <p><b class="subtitulo">Estaciones:</b></p>
     <ul *ngFor="let estacion of ruta?.estaciones">
-      <li>
+      <li id="estacionRutaId">
         {{estacion}}
       </li>
     </ul>

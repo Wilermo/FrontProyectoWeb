@@ -19,7 +19,7 @@
 
   <tr *ngFor="let estacion of estaciones" >
     <td>{{estacion.mapKey}}</td>
-    <td> {{estacion.nombre}}</td>
+    <td id="nombreEstacionId"> {{estacion.nombre}}</td>
     <td  *ngIf="keyCloakService.isUserInRole('ROLE_ADMINISTRADOR')||keyCloakService.isUserInRole('ROLE_UNIVERSAL')">
       <button type="button" (click)="editEstacion(estacion)">Editar</button>
     </td>

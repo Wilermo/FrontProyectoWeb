@@ -18,7 +18,6 @@ export class BusService {
 
   findAll(): Observable<Bus[]> {
     return this.http.get<Bus[]>(`http://localhost:8080/bus/list`);
-    //return of(Object.values(this.personDB));
   }
 
   findById(id: number) {
